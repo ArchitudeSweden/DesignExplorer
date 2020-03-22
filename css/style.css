@@ -1,12 +1,24 @@
 
 h6
 {
-	font-size: 18px;
+	font-size: 16px;
+	font-family: Muli;
+	font-weight: bold;
+}
+
+.h7
+{
+	font-size: 20px;
+	font-family: Muli;
+	color: lightgrey;
+	font-stretch: extra-expanded;
+	font-weight: lighter;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: Muli;
     font-size: 12px;
+    height: 100vh;
 }
 
 .modal-content, #viewer2d, #viewer3d{
@@ -133,7 +145,7 @@ div#thumbnails-btm_container.rightChartFullScreenToggled #thumbnails-btm div
     width: 25%;
 }
 
-div#thumbnails-btm.col-lg-12{
+div#thumbnails-btm.col-lg-3{
     margin-top: 20px;
     overflow: auto;
     /* Firefox */
@@ -146,12 +158,17 @@ div#thumbnails-btm.col-lg-12{
     height: calc(100% - 50px);
 }
 
-#thumbnails-btm_container,
-#zoomedArea {
-    overflow: hidden;
+#thumbnails-btm_container
+{
+    overflow: auto;
     margin-top: 10px;
-    min-height: 0;
+    min-height: 85;
+}
 
+ #zoomedArea {
+ overflow: hidden;
+ margin-top: 10px;
+ min-height: 45;
 }
 
 #legend {
@@ -269,7 +286,8 @@ a#copyRightButton {
 }
 
 g.cell text {
-    font-size: 0.85em;
+    font-size: 0.95em;
+    font-family: Muli;
 }
 #folderLink{
     border-radius: 20px 0 0 20px;

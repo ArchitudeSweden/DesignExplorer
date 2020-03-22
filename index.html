@@ -104,7 +104,8 @@
     <script src="./js/designExplorer.js" type="text/javascript" language="javascript"></script>
     <!-- for clean parameters before new data comes in -->
     
-  
+     <!--Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 
     <!-- Google Client Scripts -->
     <!--<script src="./js/GoogleClient.js" type="text/javascript" language="javascript"></script>-->
@@ -261,10 +262,11 @@
 <body >
 
     <!-- Navbar -->
-    <nav class="navbar" style="margin-bottom:0; background-color: #262626">
+    <nav class="navbar" style="border-radius: 0px; margin-bottom:0; background-color: #262626">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+                <h3 class="h7"> DESIGN DASHBOARD </h3>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#buttons-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -298,10 +300,10 @@
 
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" style="background-color: #f2f2f2">
+        <div id="sidebar-wrapper" style="background-color: #f2f2f2; height: 100vh">
             <ul class="sidebar-nav">
-                <div id="legend-heading" class="sidebar-brand col-xs-12" style="text-align:center">
-                    <h6> Parameters </h6>
+                <div id="legend-heading" class="sidebar-brand col-xs-12" style="text-align:left;">
+                    <h6> PARAMETERS </h6>
                 </div>
                 <div class="legend col-xs-12" id="legend" style = "height: 80vh">
                     <!--place holder for legends-->
@@ -323,7 +325,7 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <!--Here starts the Charts row-->
-                <div class="col-lg-12">
+                <div class="col-lg-9">
                     <div class="row">
 
                         <!--here starts the parallel coordinates row-->
@@ -334,25 +336,14 @@
                                     <button type="button" class="btn btn-default btn-xs" id="menu-toggle" title="Show sliders">
                                         <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
                                     </button>
-                                    <button type="button" class="btn btn-default btn-xs" id="pcgraph" data-toggle="collapse">
-                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-                                    </button>
-                                    <button id="reset" class="btn btn-default btn-xs">Reset Selection</button>
+                                    <button id="reset" class="btn btn-default btn-xs">Reset Filters</button>
                                     <button id="remove" class="btn btn-default btn-xs">Exclude Selection</button>
                                     <button id="keep" class="btn btn-default btn-xs">Zoom to Selection</button>
-                                    <button id="savecsv" class="btn btn-default btn-xs" onclick="saveToCSV()">Save Selection to File</button>
-                                    <button id="stilllink" class="btn btn-default btn-xs" onclick="showStillLink()">My Static Link</button>
+                                    <button id="savecsv" class="btn btn-default btn-xs" onclick="saveToCSV()">Export</button>
+                                    <button id="stilllink" class="btn btn-default btn-xs" onclick="showStillLink()">Get Link</button>
 
-                                    <!-- Change label size -->
-                                    <div class="btn-group col-xs-3" style="width: auto;float: right;">
-                                        <button id="dataSetting" class="btn btn-default btn-xs" onclick="dataSetting(graph)" title="Setting">Setting</button>
-                                        <button id="LL" class="btn btn-default btn-xs" onclick="changeLabelSize('largeLabel')" title="Large Label">L</button>
-                                        <button id="MM" class="btn btn-default btn-xs" onclick="changeLabelSize('mediumLabel')" title="Medium Label">M</button>
-                                        <button id="SS" class="btn btn-default btn-xs" onclick="changeLabelSize('smallLabel')" title="Small Label">S</button>
-                                        <button id="pcFullScreen-toggle" class="btn btn-default btn-xs" title="Full Screen">
-                                            <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-                                        </button>
-                                    </div>
+                                    
+                                    
                                 </div>
                                 
                             </div>
@@ -368,21 +359,7 @@
                         <!-- end of left side charts-->
 
                         <!-- start of right side charts-->
-                        <div id="ScChartWrapper" class="col-lg-3">
-
-                            <div class="row-fluid">
-                                <div id="rightTopButtonGroup" class="btn-group col-xs-12">
-                                    <button type="button" class="btn btn-default btn-xs" id="scatter-fullscreen-toggle" title="Full Screen">
-                                        <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
-                                    </button>
-                                    <!--<button type="button" class="btn btn-default btn-xs" id="rcgraph" data-toggle="collapse" data-target="#radarChart">
-                                        <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-                                    </button>-->
-                                    <button type="button" class="btn btn-default btn-xs" id="scatter-menu-toggle" title="Show Dimensions">
-                                        <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-                                    </button>
-                                </div>
-                            </div>
+                        <div id="ScChartWrapper" class="col-lg-1">
 
                             <div class="row chartSide">
 
@@ -397,12 +374,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row-fluid col-lg-12">
+                <div class="col-fluid col-lg-3">
+
+                    <!--Here starts the thumbnails-btm_container-->
+                    <div class="col-lg-12" id="thumbnails-btm_container">
+                        <div class="col-lg-12 sorting"></div>
+                        <div class="col-lg-12" id="thumbnails-btm"></div>
+                    </div>
 
 
                     <!-- Zoomed div for zoomed in areas -->
                     <div class="col-lg-9" id="zoomedArea" style="height:0px">
-                        <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 1%;height: auto; width: auto;min-width: 280px;">
+                        <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 1%;height: auto; width: auto;min-width: 480px;">
                                 <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
@@ -453,15 +436,7 @@
                     </div>
                     
 
-                    <!--Here starts the thumbnails-btm_container-->
-                    <div class="col-lg-12" id="thumbnails-btm_container">
-                        <div class="col-lg-12 sorting"></div>
-                        <div class="col-lg-12" id="thumbnails-btm"></div>
-                    </div>
-
-                     <!--Here starts the thumbnails-btm_tbContainer-->
-                     <div id="tbContainer" class="col-lg-12"></div>
-
+                    
 
                 </div>
             </div>
@@ -474,25 +449,6 @@
                     <br>
                     <h1 class="text-center" style="margin-top: 1em;"> Welcome to Design Explorer!</h1>
                     <br>
-
-                    <h5 class="text-center">Try one of following sample design sets or load your own data.<a href="http://www.mpendesign.com/category/tutorial/" target="_blank"> (Tutorial)</a></h5> 
-                    <h5 class="text-center"></h5>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <img src="img/RedBox.gif" class="sampleImage image-rounded" id="sample1">
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="img/Daylighting.gif" class="sampleImage image-rounded" id="sample2">
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="img/BoxBuilding.gif" class="sampleImage image-rounded" id="sample3">
-                        </div>
-                        <br>
-                        <br>
-                    </div>
-                    <div class="col-lg-12" style="position: absolute;bottom: 2em;width: calc(100% - 60px);">
-                        <h5 class="text-center">v2 (08/15/2019)</h5>
-                    </div>
                 </div>
 
                 <!--load data div-->
@@ -1294,6 +1250,7 @@
 
 
         var scatterHeight = d3.select("#ScChartWrapper").style("height").replace("px", "");
+        //var scatterHeight = 50;
         window.addEventListener("resize", reDrawPcChart);
 
         //redraw the charts when window size changes
