@@ -47,6 +47,7 @@ body {
     font-family: Muli;
     font-size: 12px;
     height: 100vh;
+    overflow: hidden;
 }
 
 .modal-content, #viewer2d, #viewer3d{
@@ -158,7 +159,7 @@ div#thumbnails-btm_container.rightChartFullScreenToggled
 {
     position: absolute;
     right: 0;
-    width: 25%;
+    width: 50%;
 
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -170,7 +171,7 @@ div#thumbnails-btm_container.onRight,
 div#thumbnails-btm_container.onRight #thumbnails-btm div, 
 div#thumbnails-btm_container.rightChartFullScreenToggled #thumbnails-btm div
 {
-    width: 25%;
+    width: 50%;
 }
 
 div#thumbnails-btm.col-lg-3{
@@ -258,7 +259,7 @@ a#copyRightButton {
 
 .popupWindow, 
 .modal-backdrop{
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: rgba(0, 0, 0, 0.60);
 }
 
 #welcomeContainer .col-sm-4 {
@@ -270,7 +271,7 @@ a#copyRightButton {
     background-color: #ffffff;
     opacity: 1;
     z-index: 1000;
-    width: 40%;
+    width: 30%;
     height: 50%;
     margin-left: auto;
     margin-right: auto;

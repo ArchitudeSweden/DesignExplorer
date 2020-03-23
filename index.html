@@ -306,7 +306,7 @@
                 <div id="legend-heading" class="sidebar-brand col-xs-12" style="text-align:left;">
                     <h6> PARAMETERS </h6>
                 </div>
-                <div class="legend col-xs-12" id="legend" style = "height: 80vh">
+                <div class="legend col-xs-12" id="legend" style = "height: 90vh">
                     <!--place holder for legends-->
                 </div>
                 <!--<div id="sliders-heading" class="sidebar-brand" style="text-align:center">
@@ -326,7 +326,7 @@
         <div id="page-content-wrapper">
             <div class="container-fluid" style="height:80vh">
                 <!--Here starts the Charts row-->
-                <div class="col-lg-9">
+                <div class="col-lg-8">
                     <div class="row">
 
                         <!--here starts the parallel coordinates row-->
@@ -337,13 +337,11 @@
                                     <button type="button" class="menu-btn btn btn-default btn-xs" id="menu-toggle" title="Show sliders">
                                         <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
                                     </button>
-                                    <button id="reset" class="menu-btn btn btn-default btn-xs">Reset Filters</button>
-                                    <button id="remove" class="menu-btn btn btn-default btn-xs">Exclude Selection</button>
-                                    <button id="keep" class="menu-btn btn btn-default btn-xs">Zoom to Selection</button>
+                                    <button id="reset" class="menu-btn btn btn-default btn-xs">Reset</button>
+                                    <button id="remove" class="menu-btn btn btn-default btn-xs">Exclude</button>
+                                    <button id="keep" class="menu-btn btn btn-default btn-xs">Zoom</button>
                                     <button id="savecsv" class="menu-btn btn btn-default btn-xs" onclick="saveToCSV()">Export</button>
                                     <button id="stilllink" class="menu-btn btn btn-default btn-xs" onclick="showStillLink()">Get Link</button>
-                                    <input type="text" name="searchfield" class="menu-btn btn btn-default btn-xs" placeholder="Seach ID" />
-
                                     
                                     
                                 </div>
@@ -363,12 +361,13 @@
                        
                     </div>
                 </div>
-                <div class="col-fluid col-lg-3" style="border-left:solid 2px #f2f2f2 ">
+                <div class="col-fluid col-lg-4" style="border-left:solid 2px #f2f2f2 ">
 
                     <!--Here starts the thumbnails-btm_container-->
-                    <h6> ALTERNATIVES </h6>
+                    <h6 style="float:left"> ALTERNATIVES </h6>
                     <div class="col-lg-12" id="thumbnails-btm_container">
-                        <h5 style="float: right"> 180 of 1345 </h5>
+                        <h6 style="float: right"> 180 of 1345 </h6>
+                        <input type="text" name="searchfield" class="menu-btn btn btn-default btn-xs" style="float:right" placeholder="Seach ID" />
                         <div class="col-lg-12 sorting"></div>
                         <div class="col-lg-12" id="thumbnails-btm"></div>
                     </div>
@@ -376,44 +375,41 @@
                 </div>
 
                     <!-- Zoomed div for zoomed in areas -->
-                    <div class="col-lg-9" id="zoomedArea" style="height:0px">
+                    <div class="col-lg-8" id="zoomedArea" style="height:0px; float: left">
                         <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 0%;height: auto; width: auto;min-width: 480px;">
                                 <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1">Properties</a>
+                                    <h6 data-toggle="collapse" href="#collapse1">KEY FIGURES</h6>
                                     </h4>
                                 </div>
-                                <div id="collapse1" class="panel-collapse collapse in">
+                                <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body"><p>data</p></div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="pull-right" id="vis">
                             <form>
 
-                                <label><input type="radio" class="toggleView" name="visMode" value="2D" checked> 2D</label>
+                                <label><input type="radio" class="menu-btn toggleView" name="visMode" value="2D" checked> 2D</label>
                                 <!-- show 2D image on load-->
                                 <label id="threeDLabel"><input type="radio" class="toggleView" name="visMode" value="3D" id="threeDRadio"> 3D</label>
 
                                 <button type="button" class="btn btn-default btn-xs hide" id="toggleComments" title="Add Comments">
                                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                 </button>
-                                <button type="button" class="btn btn-default btn-xs" id="fullscreentoggle" title="Full Screen Toggle">
+                                <button type="button" class="menu-btn btn btn-default btn-xs" id="fullscreentoggle" title="Full Screen Toggle">
                                     <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
                                 </button>
-                                <button type="button" class="btn btn-default btn-xs"title="Unselect" onclick="updateLayoutOnDeselect()">
+                                <button type="button" class="menu-btn btn btn-default btn-xs"title="Unselect" onclick="updateLayoutOnDeselect()">
                                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                 </button>
 
                             </form>
                             <form>
                                 <!--rating div-->
-                                <input class="star" type="radio" name="rating" value="1" />
-                                <input class="star" type="radio" name="rating" value="2" />
-                                <input class="star" type="radio" name="rating" value="3" />
-                                <input class="star" type="radio" name="rating" value="4" />
-                                <input class="star" type="radio" name="rating" value="5" />
+                                <input class="star" type="radio" name="rating" value="1"  />
                             </form>
                             <form class="dropdown imgSwitch"></form>
 
@@ -443,6 +439,7 @@
                     <p class="text-center">
                     <input type="text" id="username" class="btn btn-default btn-sm toggled" placeholder="Username"
                         />
+                        <br>
                     <input type="text" id="password" class="btn btn-default btn-sm toggled" placeholder="Password"
                         />
                     </p>
@@ -473,7 +470,9 @@
                         <p class="text-center">
                             <input type="file" id="csv-file" class="btn btn-default btn-sm" name="files" placeholder="Connection String">
                             <br>
+                            <br>
                             <input type="file" id="csv-file" class="btn btn-default btn-sm" name="files" placeholder="Connection String">
+                            <br>
                         </p>
                         <h5 class="text-center" style="color: #9d9d9d;">Fill in database collection name. (Example:<a href="design_explorer_data/example/LocalCSV_example.csv" target="_blank">data.csv</a>)</h5>
                     </div>
@@ -728,7 +727,7 @@
 
             // move btm thumbnail to right
             d3.select("#thumbnails-btm_container")
-                    .classed("onRight",true);
+                    .classed("onRight", false);
 
             // push the image to zoomed viewer2d area
             d3.select("#viewer2d")
