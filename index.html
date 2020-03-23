@@ -323,13 +323,13 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div class="container-fluid">
+            <div class="container-fluid" style="height:80vh">
                 <!--Here starts the Charts row-->
                 <div class="col-lg-9">
                     <div class="row">
 
                         <!--here starts the parallel coordinates row-->
-                        <div id="PcChartWrapper" class="col-lg-9">
+                        <div id="PcChartWrapper" class="col-lg-12">
                             <div class="row">
                                 <!-- parallel coordiantes' buttons (reset,remove... ) -->
                                 <div class="btn-group col-xs-12" >
@@ -358,20 +358,10 @@
                         </div>
                         <!-- end of left side charts-->
 
-                        <!-- start of right side charts-->
-                        <div id="ScChartWrapper" class="col-lg-1">
-
-                            <div class="row chartSide">
-
-                                <!--<div id="scatterChart" class="col-lg-12 collaps in center-block">
-                                        place holder for the scatterChart
-                                </div>-->
-                            </div>
-
-                        </div>
+                       
                     </div>
                 </div>
-                <div class="col-fluid col-lg-3">
+                <div class="col-fluid col-lg-3" style="border-left:solid 2px #f2f2f2 ">
 
                     <!--Here starts the thumbnails-btm_container-->
                     <div class="col-lg-12" id="thumbnails-btm_container">
@@ -379,10 +369,11 @@
                         <div class="col-lg-12" id="thumbnails-btm"></div>
                     </div>
 
+                </div>
 
                     <!-- Zoomed div for zoomed in areas -->
                     <div class="col-lg-9" id="zoomedArea" style="height:0px">
-                        <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 1%;height: auto; width: auto;min-width: 480px;">
+                        <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 0%;height: auto; width: auto;min-width: 480px;">
                                 <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
@@ -435,7 +426,7 @@
 
                     
 
-                </div>
+                
             </div>
             <!-- /#Welcome content -->
             <div class="row-fluid col-lg-12 row-centered vertical-center fullscreen popupWindow" id="welcome">
@@ -637,17 +628,6 @@
 
         }
 
-        //unique id for each Circle
-        function getCircleID(d) {
-            var id;
-            var keys = d3.keys(graph.data()[0]);
-        
-            keys.forEach(function(key) {
-                id = "scatter_" + cleanString(d[key].toString());
-            });
-        
-            return id;
-        }
 
         function updateScatterChart() {
             var data = graph.brushed().length > 0 ? graph.brushed() : graph.data();
@@ -715,47 +695,7 @@
 
         //--------------------------------------------------set right side chart full screen -----------------------------------//
 
-        var divWidth = d3.select("#ScChartWrapper").style("width").replace("px", "");
-
-        $("#scatter-fullscreen-toggle").click(function (e) {
-            isRightChartFullScreenToggled = !isRightChartFullScreenToggled;
-
-            d3.selectAll(
-                    "#ScChartWrapper," +
-                    ".chartSide,"+
-                    ".col-lg-3 .row-fluid,"+
-                    ".thumbnailSide,"+
-                    "#copyRightButton, "+
-                    ".scatter-matrix-container circle,"+
-                    " #PcChartWrapper, "+
-                    "#thumbnails-btm_container, "+
-                    "#thumbnails-btm_container #thumbnails-btm, "+
-                    " #zoomedArea"
-                )
-                .classed("rightChartFullScreenToggled", isRightChartFullScreenToggled);
-
-            if (isRightChartFullScreenToggled) {
-                //var newDim =  windowHeight - 200;
-                d3.select("#thumbnails-btm_container").style("height", cleanHeight + "px");
-            } else {
-                d3.select("#thumbnails-btm_container").style("height", zoomedHeight+"px");
-            }
-
-
-        });
-
-        function resizeScChart(newWidth, newHeight) {
-
-
-            d3.select(".scatter-matrix-svg") // for centering the chart
-                .style("width", newWidth + "px");
-
-            d3.select(".scatter-matrix-control")
-                .style("height", newHeight + "px");
-        }
-
-
-
+        
         // update layout on select
         function updateLayoutOnSelect() {
 
@@ -818,11 +758,9 @@
                 .transition().duration(300)
                 .style("height", function () {
 
-                    if (isRightChartFullScreenToggled) {
-                        return d3.select(".scatter-matrix-svg").style("width").replace("px", "") - 20 + "px";
-                    } else {
+                   
                         return zoomedHeight + "px";
-                    }
+                    
                     //console.log(isRightChartFullScreenToggled);
 
                 });
@@ -1211,11 +1149,8 @@
         var pcIsColoredBy;
 
         var color = d3.scale.linear()
-            .range(["#3182bd", "#f33"]);
-
-
-        var scatterHeight = d3.select("#ScChartWrapper").style("height").replace("px", "");
-        //var scatterHeight = 50;
+            .range(["#013b2d", "#6ec2b3"]); //COLORS
+        
         window.addEventListener("resize", reDrawPcChart);
 
         //redraw the charts when window size changes
@@ -1417,7 +1352,7 @@
 
             // get width and height for legend area
             var legendWidth = d3.select("#legend").style("width").replace("px", "");
-            var legendHeight = d3.select("#sidebar-wrapper").style("height").replace("px", "") / 3;
+            var legendHeight = d3.select("#sidebar-wrapper").style("height").replace("px", "") / 1.5;
 
             // legend boxes are diminsions of the graph
             //console.log(Object.keys(graph.dimensions()));

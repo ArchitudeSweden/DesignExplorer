@@ -162,26 +162,26 @@ div#thumbnails-btm.col-lg-3{
     margin-top: 20px;
     overflow: auto;
     /* Firefox */
-    height: -moz-calc(100% - 50px);
+    height: -moz-calc(100% - 10px);
     /* WebKit */
-    height: -webkit-calc(100% - 50px);
+    height: -webkit-calc(100% - 10px);
     /* Opera */
-    height: -o-calc(100% - 50px);
+    height: -o-calc(100% - 10px);
     /* Standard */
-    height: calc(100% - 50px);
+    height: calc(100% - 10px);
 }
 
 #thumbnails-btm_container
 {
     overflow: auto;
     margin-top: 10px;
-    min-height: 85;
+    min-height: 385;
 }
 
  #zoomedArea {
  overflow: hidden;
  margin-top: 10px;
- min-height: 45;
+ min-height: 595;
 }
 
 #legend {
