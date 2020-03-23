@@ -361,14 +361,16 @@
                        
                     </div>
                 </div>
-                <div class="col-fluid col-lg-4" style="border-left:solid 2px #f2f2f2 ">
+                <div class="col-fluid col-lg-4" style="border-left:solid 2px #f2f2f2; position: sticky;">
 
                     <!--Here starts the thumbnails-btm_container-->
                     <h6 style="float:left"> ALTERNATIVES </h6>
+                    <input type="text" name="searchfield" class="menu-btn btn btn-default btn-xs" placeholder="Seach ID" />
+                    <div class="col-lg-12 sorting">
+                        <h4 style="float: right"> 180 of 1345 </h4>
+                    </div>
+                    
                     <div class="col-lg-12" id="thumbnails-btm_container">
-                        <h6 style="float: right"> 180 of 1345 </h6>
-                        <input type="text" name="searchfield" class="menu-btn btn btn-default btn-xs" style="float:right" placeholder="Seach ID" />
-                        <div class="col-lg-12 sorting"></div>
                         <div class="col-lg-12" id="thumbnails-btm"></div>
                     </div>
 
@@ -376,11 +378,11 @@
 
                     <!-- Zoomed div for zoomed in areas -->
                     <div class="col-lg-8" id="zoomedArea" style="height:0px; float: left">
-                        <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 0%;height: auto; width: auto;min-width: 480px;">
+                        <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 0%;height: auto; width: 20%;min-width: 280px;">
                                 <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                    <h6 data-toggle="collapse" href="#collapse1">KEY FIGURES</h6>
+                                    <h6 data-toggle="collapse" href="#collapse1">KEY FIGURES ^</h6>
                                     </h4>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
@@ -727,7 +729,7 @@
 
             // move btm thumbnail to right
             d3.select("#thumbnails-btm_container")
-                    .classed("onRight", false);
+                    .classed("onRight", true);
 
             // push the image to zoomed viewer2d area
             d3.select("#viewer2d")
@@ -861,7 +863,7 @@
             d3.select("#thumbnails-btm_container")
                 // .attr("class","col-lg-12")
                     // .select("#thumbnails-btm")
-                    .classed("onRight",false);
+                    .classed("onRight", true);
 
             // // hide side thumbnail
             // d3.select("#thumbnails-side_container")
@@ -1761,7 +1763,7 @@
                     
 
                     d3.select("#PcChartWrapper")
-                    .classed("col-lg-9", !isLeftChartFullScreenToggled)
+                    .classed("col-lg-8", !isLeftChartFullScreenToggled)
                     .classed("col-lg-12", isLeftChartFullScreenToggled);
 
                     if (isLeftChartFullScreenToggled) {
@@ -2330,7 +2332,7 @@
             // select zoomed Div and change style
             d3.select("#zoomedArea")
                 .attr("class", function () {
-                    return fullscreen ? "zoomed fullscreen" : "col-lg-9";
+                    return fullscreen ? "zoomed fullscreen" : "col-lg-8";
                 });
 
             //make sure width and height are 100%

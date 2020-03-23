@@ -6,6 +6,13 @@ h6
 	font-weight: bold;
 }
 
+h4
+{
+	font-size: 12px;
+	font-family: Muli;
+	font-weight: bold;
+}
+
 .h7
 {
 	font-size: 20px;
@@ -130,8 +137,8 @@ output {
 
 
 #thumbnails-btm img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     border-radius: 0%;
     border: .2em solid;
     top: 0;
@@ -159,7 +166,7 @@ div#thumbnails-btm_container.rightChartFullScreenToggled
 {
     position: absolute;
     right: 0;
-    width: 50%;
+    width: 80%;
 
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -171,7 +178,7 @@ div#thumbnails-btm_container.onRight,
 div#thumbnails-btm_container.onRight #thumbnails-btm div, 
 div#thumbnails-btm_container.rightChartFullScreenToggled #thumbnails-btm div
 {
-    width: 50%;
+    width: 80%;
 }
 
 div#thumbnails-btm.col-lg-3{
@@ -190,14 +197,14 @@ div#thumbnails-btm.col-lg-3{
 #thumbnails-btm_container
 {
     overflow: auto;
-    margin-top: 10px;
-    min-height: 385;
+    margin-top: 20px;
+    min-height: 885;
 }
 
  #zoomedArea {
  overflow: hidden;
  margin-top: 10px;
- min-height: 595;
+ min-height: 395;
 }
 
 #legend {
@@ -307,8 +314,8 @@ a#copyRightButton {
     position: absolute;
 }
 #thumbnails-btm_container.rightChartFullScreenToggled{
-    width: 25%;
-    height: calc(100% - 70px);
+    width: 85%;
+    height: calc(100% - 10px);
 }
 
 .col-lg-3 #copyRightButton.rightChartFullScreenToggled{
@@ -368,7 +375,7 @@ g.cell text {
 
 
 
-#tbContainer { padding-left: 60px;}
+#tbContainer { padding-left: 20px;}
 /* .row, .header {clear: left;font-size: 12px;line-height: 18px;height: 18px;} */
 #tbContainer .row:nth-child(odd) { background: rgba(0,0,0,0.03); }
 #tbContainer .header {
