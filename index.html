@@ -1155,7 +1155,7 @@
     <script type="text/javascript">
         var graph;
         //set up heights of divs
-        var opacity = 0.4;
+        var opacity = 0.6;
 
 
         var pcIsColoredBy;
@@ -1169,7 +1169,7 @@
         function reDrawPcChart () { 
             calWidthAndHeight();
 
-            var newGraphWidth = windowWidth*0.75-30; // (col-lg-9 x0.73) - (boside padding 15*2)
+            var newGraphWidth = windowWidth*0.75-10; // (col-lg-9 x0.73) - (boside padding 15*2)
             // var newGraphWidth = windowWidth-scatterWidth-90;
             var newGraphHeight = graphHeight;
 
@@ -1226,9 +1226,9 @@
                 .data(cleanedData)
                 .margin({
                     top: 50,
-                    left: 20,
+                    left: 10,
                     bottom: 10,
-                    right: 20
+                    right: 10
                 })
                 .alpha(opacity)
                 .mode("queue")
