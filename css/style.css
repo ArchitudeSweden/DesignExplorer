@@ -15,6 +15,19 @@ h6
 	font-weight: lighter;
 }
 
+.menu-btn
+{
+	background-color: #f2f2f2;
+	border:solid white 5px;
+	border-radius: 10%;
+	padding: 5px;
+}
+
+.menu-btn:hover
+{
+	border: solid white 5px;
+}
+
 body {
     font-family: Muli;
     font-size: 12px;
@@ -254,7 +267,7 @@ a#copyRightButton {
 }
 
 #ScChartWrapper {
-    background-color: white;
+    background-color: #f2f2f2;
 }
 
 #ScChartWrapper.rightChartFullScreenToggled{
@@ -289,6 +302,7 @@ g.cell text {
     font-size: 0.95em;
     font-family: Muli;
 }
+
 #folderLink{
     border-radius: 20px 0 0 20px;
     width: 300px;

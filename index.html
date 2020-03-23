@@ -333,14 +333,14 @@
                             <div class="row">
                                 <!-- parallel coordiantes' buttons (reset,remove... ) -->
                                 <div class="btn-group col-xs-12" >
-                                    <button type="button" class="btn btn-default btn-xs" id="menu-toggle" title="Show sliders">
+                                    <button type="button" class="menu-btn btn btn-default btn-xs" id="menu-toggle" title="Show sliders">
                                         <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
                                     </button>
-                                    <button id="reset" class="btn btn-default btn-xs">Reset Filters</button>
-                                    <button id="remove" class="btn btn-default btn-xs">Exclude Selection</button>
-                                    <button id="keep" class="btn btn-default btn-xs">Zoom to Selection</button>
-                                    <button id="savecsv" class="btn btn-default btn-xs" onclick="saveToCSV()">Export</button>
-                                    <button id="stilllink" class="btn btn-default btn-xs" onclick="showStillLink()">Get Link</button>
+                                    <button id="reset" class="menu-btn btn btn-default btn-xs">Reset Filters</button>
+                                    <button id="remove" class="menu-btn btn btn-default btn-xs">Exclude Selection</button>
+                                    <button id="keep" class="menu-btn btn btn-default btn-xs">Zoom to Selection</button>
+                                    <button id="savecsv" class="menu-btn btn btn-default btn-xs" onclick="saveToCSV()">Export</button>
+                                    <button id="stilllink" class="menu-btn btn btn-default btn-xs" onclick="showStillLink()">Get Link</button>
 
                                     
                                     
@@ -363,9 +363,6 @@
 
                             <div class="row chartSide">
 
-                                <div id="radarChart" class="col-lg-12 collaps in center-block" style="font-size:14px; font-weight:bold">
-                                    <!-- // <h5>Radar Chart Place Holder</h5> -->
-                                </div>
                                 <!--<div id="scatterChart" class="col-lg-12 collaps in center-block">
                                         place holder for the scatterChart
                                 </div>-->
@@ -550,13 +547,6 @@
                         </div>
 
                     </div>
-
-                    <!--buttons for setting list-->
-                    <div class="col-xs-6 col-md-offset-3" style="margin-top: 1.5em;">
-                        <button id="setUserSetting" type="button" class="btn col-xs-4 col-md-offset-1">Set</button>
-                        <button id="saveUserSetting" type="button" class="btn col-xs-4 col-md-offset-1" data-toggle="tooltip" data-placement="bottom" title ="Export the setting file, and save to where data.csv located!">Save</button>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -641,28 +631,8 @@
         // add scatter chart
         function addScatterChart() {
             var pcHeight = d3.select("#graph").style("height").replace("px", "");
-            var rightChartWidth = d3.select("#radarChart").style("width").replace("px", "");
-            var selectedData;
-            if (graph.brushed().length > 0) {
-                selectedData = graph.brushed();
-            } else {
-                selectedData = graph.data();
-
-            }
-            var sm = new ScatterMatrix("", selectedData, '#radarChart');
-            sm.cellSize((pcHeight - 60) / 2);
-            sm.render();
-
-            // adjust the chart style
-            //var chartWidth = d3.select(".scatter-matrix-svg svg").style("width").replace("px", "");
-            d3.select(".scatter-matrix-svg")
-                .style("width", pcHeight - 10 + "px");
-
-            d3.select(".scatter-matrix-control")
-                .style("height", pcHeight - 30 + "px");
             
-            scatterChart = sm;
-
+           
             //return sm;
 
         }
@@ -710,11 +680,6 @@
 
         }
 
-        function unlighlightScatter() {
-            d3.selectAll(".cell circle")
-                .classed("highlighted", false);
-
-        }
 
     </script>
 
@@ -970,7 +935,7 @@
             unlighlightScatter();
 
             //show radar chart
-            $("#radarChart").collapse("show");
+           
 
             isAnyItemSelected = false;
         }
@@ -988,7 +953,7 @@
                     .style("height", "0px");
 
                 //mirror collapse behavior with radar chart
-                $("#radarChart").collapse("hide");
+                
 
                 //disable buttons
                 d3.select("#reset").classed("disabled", true);
@@ -1016,7 +981,7 @@
                 
 
                  //mirror collapse behavior with radar chart
-                $("#radarChart").collapse("show");
+               
 
                 //enable buttons
                 d3.select("#reset").classed("disabled", false);
