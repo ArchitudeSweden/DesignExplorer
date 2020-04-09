@@ -372,15 +372,17 @@
                     
                     <div class="col-lg-12" id="thumbnails-btm_container">
                         <div class="col-lg-12" id="thumbnails-btm"></div>
-                    </div>
+                    <!--Here starts the thumbnails-btm_tbContainer-->
+                                <div id="tbContainer" class="col-lg-1" style="visibility: none"></div>
+                            </div>
 
                 </div>
 
                     <!-- Zoomed div for zoomed in areas -->
                     <div class="col-lg-8" id="zoomedArea" style="height:0px; float: left">
                         <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 0%;height: auto; width: 20%;min-width: 280px;">
-                                <div class="panel panel-default">
-                                <div class="panel-heading">
+                                <div class="panel panel-default" style="background-color: #262626; color: #f2f2f2">
+                                <div class="panel-heading" style="background-color: #262626; color: #f2f2f2">
                                     <h4 class="panel-title">
                                     <h6 data-toggle="collapse" href="#collapse1">KEY FIGURES ^</h6>
                                     </h4>
@@ -388,7 +390,8 @@
                                 <div id="collapse1" class="panel-collapse collapse">
                                     <div class="panel-body"><p>data</p></div>
                                 </div>
-                            </div>
+                                
+                                </div>
                         </div>
 
                         <div class="pull-right" id="vis">
@@ -426,10 +429,10 @@
                     </div>
                     
 
-                    
-
-                
+                                     
             </div>
+
+
             <!-- /#Welcome content -->
             <div class="row-fluid col-lg-12 row-centered vertical-center fullscreen popupWindow" id="welcome">
                 <div class="col-sm-12 col-centered" id="welcomeContainer">
@@ -882,7 +885,7 @@
 
             // unhighlight the radar chart        //-----TODO:here needs a switch for different charts-------//
             //rc.unhighlight();
-            unlighlightScatter();
+            //unlighlightScatter();
 
             //show radar chart
            
@@ -1155,7 +1158,7 @@
     <script type="text/javascript">
         var graph;
         //set up heights of divs
-        var opacity = 0.6;
+        var opacity = 0.3;
 
 
         var pcIsColoredBy;
@@ -1334,24 +1337,11 @@
                 //console.log(color(yscale(d[dim])));
                 return color(valueToNumber(d[dim], dim));
             });
-            //d3.selectAll("img#thumbnails-side").style("border-color", function(d) {
-            //    return color(yscale(d[dim]));
-            //});
-
-            // change ScatterMatrix dots color
-            update_sc_colorsOnly();
+            
 
         }
 
-        //update_sc_colorsOnly
-        function update_sc_colorsOnly() {
-
-            d3.selectAll(".cell circle").style("fill", function (d) {
-
-                return color(valueToNumber(d[pcIsColoredBy], pcIsColoredBy));
-            });
-
-        }
+    
 
     </script>
 
@@ -1617,7 +1607,7 @@
             // brushing events for parallel coordinates graph
             graph.on("brush", function (d) {
                 //rc.updateData(graph.brushed());   //-----TODO:here needs a switch for different charts-------
-                updateScatterChart();
+                //updateScatterChart();
                 updateImageGrid(d, false);
                 drawTable(d);
             });
