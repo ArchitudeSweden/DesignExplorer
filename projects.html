@@ -35,7 +35,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GenDes Explorer</title>
+    <title>GenDes Projects</title>
 
     <!-- D3 -->
     <script src="./d3/d3.v3.min.js" charset="utf-8"></script>
@@ -266,8 +266,8 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <h3 class="h7"> EXPLORATION </h3>
-                <h6 class="h8"> Projects / Bergshusen </h6>
+                <h3 class="h7"> PROJECTS </h3>
+                <h6 class="h8"> Projects / All </h6>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#buttons-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -279,44 +279,28 @@
                 </div>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="buttons-navbar-collapse-1">
-                <ul class="nav navbar-nav" style = "float: right">
-                    <li>
-                        <!--button to load csv uncommented-->
-                        <p class="navbar-text">
-                            <button id="showLoadData" class="file-upload" style="border-radius: 20px;">Get Data</button>
-                        </p>
-                    </li>
-                </ul>
-                <div id = "navbar-studyInfo">
-                    <h4></h4>
-                    <h6></h6>
-                </div>
-            </div>
-            <!-- /.navbar-collapse -->
-
+            
         </div>
     </nav>
 
     <div id="wrapper" class="toggled">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" style="background-color: #f2f2f2; height: 100vh">
+        <div id="sidebar-wrapper" style="background-color: #f2f2f2; height: 100vh; overflow-y: hidden;">
             <ul class="sidebar-nav">
                 <div id="legend-heading" class="sidebar-brand col-xs-12" style="text-align:left;">
-                    <h6> PARAMETERS </h6>
                 </div>
-                <div class="legend col-xs-12" id="legend" style = "height: 90vh">
+                <div class="legend col-xs-12" id="legend" style = "height: 90vh; font-size: 20px; background-color:transparent;">
                     <!--place holder for legends-->
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> 5 projects
+                    </li>
+                    <br>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> 12.300 options</li>
+                    <br>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> 2 users </li>
                 </div>
                 <!--<div id="sliders-heading" class="sidebar-brand" style="text-align:center">
                     LOAD YOUR DATA!
                 </div>-->
-                <div class="inputSliders col-xs-11" id="inputSliders">
-                    <form class="sliders">
-                        <!-- I will use this form to disable all the sliders together. -->
-                    </form>
-                </div>
                 <div id="sliders-report" class="sidebar-brand col-xs-12" style="text-align:center"></div>
             </ul>
         </div>
@@ -325,12 +309,12 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid" style="height:80vh">
-                <!--Here starts the Charts row-->
-                <div class="col-lg-8">
-                    <div class="row">
 
+                <!--Here starts the Charts row-->
+                <div class="col-lg-12">
+                    <div class="row">
                         <!--here starts the parallel coordinates row-->
-                        <div id="PcChartWrapper" class="col-lg-12" style="font-size: 8px">
+                        <div class="col-lg-12" style="font-size: 16px">
                             <div class="row">
                                 <!-- parallel coordiantes' buttons (reset,remove... ) -->
                                 <div class="btn-group col-xs-12" >
@@ -342,223 +326,56 @@
                                     <button id="keep" class="menu-btn btn btn-default btn-xs">Zoom</button>
                                     <button id="savecsv" class="menu-btn btn btn-default btn-xs" onclick="saveToCSV()">Export</button>
                                     <button id="stilllink" class="menu-btn btn btn-default btn-xs" onclick="showStillLink()">Get Link</button>
-                                    
-                                    
-                                </div>
-                                
-                            </div>
-                            <!-- parallel coordinates -->
-                            <div class="row-fluid">
-                                <div id="graph" class="parcoords collapse in">
-                                    <!-- <h1>Parallel coordinates graph</h1> -->
+
+                                    <!--Project Btn --->
+                                        <ul class="nav navbar-nav" style = "float: right; font-size: 12px">
+                                            <li>
+                                                <p class="navbar-text">
+                                                    <button id="showLoadData" class="file-upload" style="border-radius: 20px;">Add Project</button>
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    <!-- /.ProjectBtn -->
+
                                 </div>
                             </div>
 
-                            
-                        </div>
+                            <ul class="list-group">
+                                    <li class=" s list-group-item d-flex justify-content-between align-items-center"onclick="location.href='index.html'">
+                                    Bergshusen
+                                      <span class="badge badge-primary badge-pill">1436</span>
+                                      <span class="badge badge-primary badge-pill list-group-item-info">Ongoing</span>
+                                  </li>
+                                  <li class="s list-group-item d-flex justify-content-between align-items-center">
+                                    Södra Tornen
+                                    <span class="badge badge-primary badge-pill list-group-item-info">2345</span>
+                                    <span class="badge badge-primary badge-pill list-group-item-success">Done</span>
+                                  </li>
+                                  <li class="s list-group-item d-flex justify-content-between align-items-center">
+                                     Äppelviken
+                                    <span class="badge badge-primary badge-pill list-group-item-danger">234</span>
+                                  </li>
+                                  <li class="s list-group-item d-flex justify-content-between align-items-center">
+                                     TornEtt
+                                    <span class="badge badge-primary badge-pill">234</span>
+                                  </li>
+                                  <li class="s list-group-item d-flex justify-content-between align-items-center">
+                                     Kvarteret
+                                    <span class="badge badge-primary badge-pill">234</span>
+                                  </li>
+                                </ul>
+                            </div>
                         <!-- end of left side charts-->
 
                        
                     </div>
                 </div>
-                <div class="col-fluid col-lg-4" style="border-left:solid 2px #f2f2f2; position: sticky;">
-
-                    <!--Here starts the thumbnails-btm_container-->
-                    <h6 style="float:left"> ALTERNATIVES </h6>
-                    <input type="text" name="searchfield" class="menu-btn btn btn-default btn-xs" placeholder="Seach ID" />
-                    <div class="col-lg-12 sorting">
-                        <h4 style="float: right"> 180 of 1345 </h4>
-                    </div>
-                    
-                    <div class="col-lg-12" id="thumbnails-btm_container">
-                        <div class="col-lg-12" id="thumbnails-btm"></div>
-                    <!--Here starts the thumbnails-btm_tbContainer-->
-                                <div id="tbContainer" class="col-lg-1" style="visibility: none"></div>
-                            </div>
-
-                </div>
-
-                    <!-- Zoomed div for zoomed in areas -->
-                    <div class="col-lg-8" id="zoomedArea" style="height:0px; float: left">
-                        <div class="panel-group Spectacles_attributeList" id="IterationData" style="display: none;right: auto;bottom: 0%;height: auto; width: 20%;min-width: 280px;">
-                                <div class="panel panel-default" style="background-color: #262626; color: #f2f2f2">
-                                <div class="panel-heading" style="background-color: #262626; color: #f2f2f2">
-                                    <h4 class="panel-title">
-                                    <h6 data-toggle="collapse" href="#collapse1">KEY FIGURES ^</h6>
-                                    </h4>
-                                </div>
-                                <div id="collapse1" class="panel-collapse collapse">
-                                    <div class="panel-body"><p>data</p></div>
-                                </div>
-                                
-                                </div>
-                        </div>
-
-                        <div class="pull-right" id="vis">
-                            <form>
-
-                                <label><input type="radio" class="menu-btn toggleView" name="visMode" value="2D" checked> 2D</label>
-                                <!-- show 2D image on load-->
-                                <label id="threeDLabel"><input type="radio" class="toggleView" name="visMode" value="3D" id="threeDRadio"> 3D</label>
-
-                                <button type="button" class="btn btn-default btn-xs hide" id="toggleComments" title="Add Comments">
-                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="menu-btn btn btn-default btn-xs" id="fullscreentoggle" title="Full Screen Toggle">
-                                    <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="menu-btn btn btn-default btn-xs"title="Unselect" onclick="updateLayoutOnDeselect()">
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </button>
-
-                            </form>
-                            <form>
-                                <!--rating div-->
-                                <input class="star" type="radio" name="rating" value="1"  />
-                            </form>
-                            <form class="dropdown imgSwitch"></form>
-
-                        </div>
-                        <div id="viewer3d" style="width:100%; height:100%" class="hidden">
-                            <!-- place holder for the viewer -->
-                        </div>
-                        <div id="viewer2d" style="width:100%; height:100%">
-                            <!-- place holder for the image -->
-                            <img>
-                        </div>
-                    </div>
-                    
-
-                                     
-            </div>
-
-
-            <!-- /#Welcome content -->
-            <div class="row-fluid col-lg-12 row-centered vertical-center fullscreen popupWindow" id="welcome">
-                <div class="col-sm-12 col-centered" id="welcomeContainer">
-                    <button class="btn btn-default btn-sm pull-right popupWindowClose">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-                    <br>
-                    <h3 class="text-center" style="margin-top: 1em;"> LOG IN!</h3>
-                    <p class="text-center">
-                    <input type="text" id="username" class="btn btn-default btn-sm toggled" placeholder="Username"
-                        />
-                        <br>
-                    <input type="text" id="password" class="btn btn-default btn-sm toggled" placeholder="Password"
-                        />
-                    </p>
-                    <br>
-                </div>
-
-                <!--load data div-->
-                <div class="col-sm-12 col-centered" id="loadDataContainer" style=" display:none;width: 500px;height: 500px">
-                    <button class="btn btn-default btn-sm pull-right popupWindowClose">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-
-                    <h4 class="text-center" style="margin: 100px 0 30px 0;">
-                        From the cloud:
-                    </h4>
-                    <p class="text-center">
-                        <input type="text" id="folderLink" class="btn btn-default btn-sm toggled" name="imgfolder" placeholder="GoogleDrive, OneDrive, or server link"
-                        />
-                        <input type="text" id="folderLinkID" class="btn btn-default btn-hd" name="imgfolder" placeholder="FolderID" />
-                        <button id="loadData" onclick="MP_getGoogleIDandLoad()" class="file-upload" style="border-radius:0 20px 20px 0;">Load Data</button>
-                    </p>
-                    
-                    <div id="loadFileLocally">
-                        <h4 class="text-center" style="margin: 60px 0 60px 0;">
-                            <h4 class="text-center" style="margin: 100px 0 30px 0;">
-                        From database:
-                        </h4>
-                        <p class="text-center">
-                            <input type="file" id="csv-file" class="btn btn-default btn-sm" name="files" placeholder="Connection String">
-                            <br>
-                            <br>
-                            <input type="file" id="csv-file" class="btn btn-default btn-sm" name="files" placeholder="Connection String">
-                            <br>
-                        </p>
-                        <h5 class="text-center" style="color: #9d9d9d;">Fill in database collection name. (Example:<a href="design_explorer_data/example/LocalCSV_example.csv" target="_blank">data.csv</a>)</h5>
-                    </div>
-                    
-                </div>
-
-            </div>
-
-            <!--show static link-->
-            <!-- Modal -->
-            <div class="modal fade" id="showStillLink" role="dialog">
-                <div class="modal-dialog">
-                
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Static link</h4>
-                    </div>
-                    <div class="modal-body"> 
-                        <h5 >Link for share </h5>
-                        <p >
-                            <code id="myStudyID">Not available</code>
-                            <button id="copy-link" class="btn btn-xs btn-default" onclick="CopyToClipboard('#myStudyID')" data-toggle="tooltip" data-placement="bottom" title="Click to copy the link!">
-                                <span class="glyphicon glyphicon-share"></span>
-                            </button>
-                        </p> 
-                        <h5 >Short link </h5>
-                        <p >
-                            <code id="showShortUrl">Not available</code>
-                            <button id="copy-showShortUrl" class="btn btn-xs btn-default " onclick="CopyToClipboard('#showShortUrl')" data-toggle="tooltip" data-placement="bottom" title="Click to copy the link!">
-                                <span class="glyphicon glyphicon-share"></span>
-                            </button>
-                        </p> 
-                        
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-                
-                </div>
-            </div>
-
-            <!--data setting -->
-            <div class="row-fluid col-lg-12 row-centered vertical-center fullscreen popupWindow" id="showSetting" style=" display:none">
-                <div class="col-sm-12 col-centered" id="dataSetting" style="width: 700px;height: 600px">
-                    <button class="btn btn-default btn-sm pull-right popupWindowClose">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
-
-                    <h1 style="margin: 30px 0 10px 0;">Setting</h1>
-                    <h6 style="margin: 0 30px 30px 0;">All settings will not be effective once this page is reloaded, unless save the setting file with data.csv on the cloud.</h6>
-
-                    <div class="panel-group" id="dimSettingList">
-                        <!--placeholder for scale setting list-->
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#dimSettingList" href="#settingStudyInfo">Study Information</a>
-                                </h4>
-                            </div>
-                            <div id="settingStudyInfo" class="panel-collapse collapse in">
-                                <div class="panel-body">
-                                    <ul class="list-group">
-                                        <li class="list-group-item form-inline">Study Name: <input id="studyNameInput" class="form-control input-sm" type="text" style="width: 80%"></li>
-                                        <li class="list-group-item form-inline">Study Date: <input id="studyDateInput" class="form-control input-sm" type="text" style="width: 80%;    margin-left: 1.1em;"></li>
-                                        <li class="list-group-item form-inline">Password: <input class="form-control input-sm" placeholder="WIP" type="text" style="width: 40%; margin-left: 1.6em;" disabled><input class="form-control input-sm" placeholder="Confirm" type="text" style="width: 39%;" disabled></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                               
             </div>
         </div>
-        <!-- /#page-content-wrapper -->
-    </div>
-    <!-- /#wrapper -->
+
+
+            
 
 
     <!-- Bootstrap Core JavaScript -->

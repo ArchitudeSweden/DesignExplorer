@@ -30,7 +30,7 @@ function unloadPageContent() {
 function calWidthAndHeight() {
     windowWidth = window.innerWidth,
     windowHeight = window.innerHeight,
-    cleanHeight = windowHeight - 115, // 2
+    cleanHeight = windowHeight - 80, // 2
     cleanWidth = windowWidth - 100,
     graphHeight = (cleanHeight / 3)-24, //remove 22+2 top tool button
     zoomedHeight = (cleanHeight*2 / 3); //remove 22+2 top tool button
@@ -291,13 +291,13 @@ function loadFromUrl(rawUrl) {
 function changeLabelSize(size) {
     if (size == "largeLabel") {
         d3.selectAll(".label")
-            .style("font-size", "95%");
+            .style("font-size", "85%");
     } else if (size == "mediumLabel") {
         d3.selectAll(".label")
-            .style("font-size", "85%");
+            .style("font-size", "75%");
     } else if (size == "smallLabel") {
         d3.selectAll(".label")
-            .style("font-size", "75%");
+            .style("font-size", "65%");
     }
 }
 
