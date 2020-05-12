@@ -355,7 +355,7 @@ g.cell text {
 }
 
 #graph svg g.mark line{
-    stroke-width: 4px;
+    stroke-width: 5px;
 }
 
 #navbar-studyInfo{
@@ -410,3 +410,7 @@ g.cell text {
 }
 
 .col-0 { width: 180px; }
+
+.s:hover{
+  background-color: #f2f2f2;
+}
